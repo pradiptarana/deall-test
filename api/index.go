@@ -1,6 +1,8 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 
 	usersRepo "deal-test/repository/users"
@@ -8,7 +10,7 @@ import (
 	usersUC "deal-test/usecase/users"
 )
 
-func Handler(c *gin.Context) {
+func Handler(w http.ResponseWriter, r *http.Request) {
 	// db := dbd.NewDBConnection()
 	userRepo := usersRepo.NewUserRepository()
 	userUC := usersUC.NewUserUC(userRepo)
@@ -17,5 +19,5 @@ func Handler(c *gin.Context) {
 	router.POST("/signup", userTr.SignUp)
 	router.POST("/login", userTr.Login)
 
-	router.Run("localhost:8080")
+	router.ServeHTTP(w, r)
 }
