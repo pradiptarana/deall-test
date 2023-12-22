@@ -6,14 +6,6 @@ import (
 	"github.com/pradiptarana/deall-test/model"
 )
 
-// type UsersRepository struct {
-// 	db *sql.DB
-// }
-
-// func NewUserRepository(db *sql.DB) *UsersRepository {
-// 	return &UsersRepository{db}
-// }
-
 // User represents a user in the system
 type User struct {
 	Username string
