@@ -13,7 +13,8 @@ var (
 )
 
 func Ping(c *gin.Context) {
-	c.String(http.StatusOK, "pong")
+	c.IndentedJSON(http.StatusOK, gin.H{"message": "sign up success"})
+	return
 }
 
 // init gin app
