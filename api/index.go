@@ -16,6 +16,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	userUC := usersUC.NewUserUC(userRepo)
 	userTr := usersTr.NewUsersTransport(userUC)
 	router := gin.Default()
+	router.Group("/api")
 	router.POST("/signup", userTr.SignUp)
 	router.POST("/login", userTr.Login)
 
