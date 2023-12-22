@@ -18,16 +18,16 @@ func NewUsersTransport(uc usecase.UsersUsecase) *UsersTransport {
 }
 
 func (ut *UsersTransport) SignUp(c *gin.Context) {
-	// var req model.UserSocial
-	// if err := c.BindJSON(&req); err != nil {
-	// 	c.IndentedJSON(http.StatusBadRequest, gin.H{"message": err.Error()})
-	// 	return
-	// }
-	// err := ut.UsersUsecase.SignUp(&req)
-	// if err != nil {
-	// 	c.IndentedJSON(http.StatusUnprocessableEntity, gin.H{"message": err.Error()})
-	// 	return
-	// }
+	var req model.UserSocial
+	if err := c.BindJSON(&req); err != nil {
+		c.IndentedJSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+		return
+	}
+	err := ut.UsersUsecase.SignUp(&req)
+	if err != nil {
+		c.IndentedJSON(http.StatusUnprocessableEntity, gin.H{"message": err.Error()})
+		return
+	}
 	c.IndentedJSON(http.StatusOK, gin.H{"message": "sign up success"})
 	return
 }
