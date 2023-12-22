@@ -6,10 +6,6 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-
-	usersRepo "github.com/pradiptarana/deall-test/repository/users"
-	usersTr "github.com/pradiptarana/deall-test/transport/api/users"
-	usersUC "github.com/pradiptarana/deall-test/usecase/users"
 )
 
 var (
@@ -22,9 +18,9 @@ func Ping(c *gin.Context) {
 
 // init gin app
 func init() {
-	userRepo := usersRepo.NewUserRepository()
-	userUC := usersUC.NewUserUC(userRepo)
-	userTr := usersTr.NewUsersTransport(userUC)
+	// userRepo := usersRepo.NewUserRepository()
+	// userUC := usersUC.NewUserUC(userRepo)
+	// userTr := usersTr.NewUsersTransport(userUC)
 	app = gin.New()
 
 	// Handling routing errors
@@ -41,9 +37,9 @@ func init() {
 
 	// register route
 
-	r.POST("/api/signup", userTr.SignUp)
-	r.POST("/api/login", userTr.Login)
-	r.POST("/ai/ping", Ping)
+	// r.POST("/api/signup", userTr.SignUp)
+	// r.POST("/api/login", userTr.Login)
+	r.GET("/api/ping", Ping)
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
