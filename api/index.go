@@ -1,7 +1,9 @@
 package api
 
 import (
+	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 
@@ -16,6 +18,15 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	userUC := usersUC.NewUserUC(userRepo)
 	userTr := usersTr.NewUsersTransport(userUC)
 	router := gin.New()
+	// Handling routing errors
+	router.NoRoute(func(c *gin.Context) {
+		sb := &strings.Builder{}
+		sb.WriteString("routing err: no route, try this:\n")
+		for _, v := range router.Routes() {
+			sb.WriteString(fmt.Sprintf("%s %s\n", v.Method, v.Path))
+		}
+		c.String(http.StatusBadRequest, sb.String())
+	})
 	router.Group("/api")
 	router.POST("/signup", userTr.SignUp)
 	router.POST("/login", userTr.Login)
