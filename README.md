@@ -10,7 +10,7 @@ You can access the app at https://deall-test-rho.vercel.app.
 # CURL
 Signup
 `curl --request POST \
-  --url https://deall-test-rana-pradiptas-projects.vercel.app/signup \
+  --url https://deall-test-rho.vercel.app/api/signup \
   --header 'Content-Type: application/json' \
   --header 'User-Agent: insomnia/8.4.5' \
   --data '{
@@ -28,6 +28,6 @@ Login
   --header 'Content-Type: application/json' \
   --header 'User-Agent: insomnia/8.4.5' \
   --data '{
-	"username": "user",
+	"username": "pradiptarana",
 	"password": "pass"
 }'`
