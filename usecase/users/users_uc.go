@@ -1,9 +1,9 @@
 package users
 
 import (
-	"deal-test/internal/auth"
-	"deal-test/model"
-	"deal-test/repository"
+	"github.com/pradiptarana/deall-test/internal/auth"
+	"github.com/pradiptarana/deall-test/model"
+	"github.com/pradiptarana/deall-test/repository"
 )
 
 type UsersUC struct {

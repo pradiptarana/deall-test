@@ -1,6 +1,6 @@
 package usecase
 
-import "deal-test/model"
+import "github.com/pradiptarana/deall-test/model"
 
 type UsersUsecase interface {
 	SignUp(req *model.UserSocial) error

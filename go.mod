@@ -1,4 +1,4 @@
-module deal-test
+module github.com/pradiptarana/deall-test
 
 go 1.21.4
 

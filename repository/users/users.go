@@ -1,8 +1,9 @@
 package users
 
 import (
-	"deal-test/model"
 	"fmt"
+
+	"github.com/pradiptarana/deall-test/model"
 )
 
 // type UsersRepository struct {

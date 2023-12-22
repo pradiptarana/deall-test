@@ -1,4 +1,4 @@
-# Deal-test
+# github.com/pradiptarana/deall-test
 This is a repository for deal interview process.
 
 # How To Run

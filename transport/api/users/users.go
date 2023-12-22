@@ -1,9 +1,10 @@
 package users
 
 import (
-	"deal-test/model"
-	"deal-test/usecase"
 	"net/http"
+
+	"github.com/pradiptarana/deall-test/model"
+	"github.com/pradiptarana/deall-test/usecase"
 
 	"github.com/gin-gonic/gin"
 )

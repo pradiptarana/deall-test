@@ -1,14 +1,15 @@
 package users_test
 
 import (
-	"deal-test/mocks"
-	"deal-test/model"
 	"errors"
 	"testing"
 
+	"github.com/pradiptarana/deall-test/mocks"
+	"github.com/pradiptarana/deall-test/model"
+
 	"github.com/golang/mock/gomock"
 
-	usersUC "deal-test/usecase/users"
+	usersUC "github.com/pradiptarana/deall-test/usecase/users"
 )
 
 func TestLoginFailed(t *testing.T) {
